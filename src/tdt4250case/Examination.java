@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see tdt4250case.Tdt4250casePackage#getExamination()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='sumIs100'"
  * @generated
  */
 public interface Examination extends EObject {

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tdt4250case:Course
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tdt4250case="platform:/plugin/tdt4250case/model/tdt4250case.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250case/model/tdt4250case.ecore ../tdt4250case.ecore"
+    code="tdt4100"
+    name="Object-oriented programming"
+    content="Basic algorithms and data structures, constructs and control flow in object-oriented languages. Modularization and re-use. Standard application programmers interface (API). Unit testing, error detection and tools for this. Object-oriented design. Use of class, object, sequence and collaboration diagrams in the UML. Use of design patterns. Simple app architecture. Java is used as implementation language.&#xA;&#xA;">
+  <studyprogram
+      href="../studyprograms/Mtdt.xmi#mtdt"/>
+  <creditReductionCourse>
+    <course
+        href="IT1104.xmi#it1104"/>
+  </creditReductionCourse>
+  <creditReductionCourse>
+    <course
+        href="SIF8005.xmi#sif8005"/>
+  </creditReductionCourse>
+  <creditReductionCourse
+      reduction="5.0"
+      from="2007-09-01T00:00:00.000+0200"
+      to="2008-08-31T00:00:00.000+0200">
+    <course
+        href="TDT4102.xmi#tdt4102"/>
+  </creditReductionCourse>
+  <creditReductionCourse
+      reduction="3.7"
+      from="2008-09-01T00:00:00.000+0200">
+    <course
+        href="TDT4102.xmi#tdt4102"/>
+  </creditReductionCourse>
+  <creditReductionCourse
+      reduction="1.2"
+      to="2008-08-31T00:00:00.000+0200">
+    <course
+        href="TDT4130.xmi#tdt4130"/>
+  </creditReductionCourse>
+  <creditReductionCourse
+      reduction="3.7"
+      from="2008-09-01T00:00:00.000+0200">
+    <course
+        href="TDT4130.xmi#tdt4130"/>
+  </creditReductionCourse>
+  <instance semester="SPRING-2018">
+    <examination>
+      <activity
+          evaluationForm="Written examination" weighting="100"/>
+    </examination>
+    <responsibleDepartment
+        href="../departments/Idi.xmi#idi"/>
+    <role name="Course coordinator">
+      <person
+          href="../departments/Idi.xmi#hal"/>
+    </role>
+    <role name="Lecturer">
+      <person
+          href="../departments/Idi.xmi#hal"/>
+      <person
+          href="../departments/Idi.xmi#rune.saetre"/>
+    </role>
+  </instance>
+  <courseWork
+      hours="4"
+      type="Lecture hours"/>
+  <courseWork
+      hours="7"
+      type="Lab hours"/>
+</tdt4250case:Course>

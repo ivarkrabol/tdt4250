@@ -31,13 +31,13 @@ public interface Tdt4250caseFactory extends EFactory {
 	Course createCourse();
 
 	/**
-	 * Returns a new object of class '<em>Course Credit Reduction</em>'.
+	 * Returns a new object of class '<em>Credit Reduction Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Course Credit Reduction</em>'.
+	 * @return a new object of class '<em>Credit Reduction Course</em>'.
 	 * @generated
 	 */
-	CourseCreditReduction createCourseCreditReduction();
+	CreditReductionCourse createCreditReductionCourse();
 
 	/**
 	 * Returns a new object of class '<em>Studyprogram</em>'.
@@ -119,6 +119,15 @@ public interface Tdt4250caseFactory extends EFactory {
 	 * @generated
 	 */
 	CourseRole createCourseRole();
+
+	/**
+	 * Returns a new object of class '<em>Course Work</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Course Work</em>'.
+	 * @generated
+	 */
+	CourseWork createCourseWork();
 
 	/**
 	 * Returns the package supported by this factory.

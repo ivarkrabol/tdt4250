@@ -71,7 +71,7 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	protected Semester semester = SEMESTER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getExamination() <em>Examination</em>}' reference.
+	 * The cached value of the '{@link #getExamination() <em>Examination</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExamination()
@@ -81,7 +81,7 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	protected Examination examination;
 
 	/**
-	 * The cached value of the '{@link #getTimetable() <em>Timetable</em>}' reference.
+	 * The cached value of the '{@link #getTimetable() <em>Timetable</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTimetable()
@@ -109,16 +109,6 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<CourseRole> role;
-
-	/**
-	 * The cached value of the '{@link #getCourseCoordinator() <em>Course Coordinator</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourseCoordinator()
-	 * @generated
-	 * @ordered
-	 */
-	protected Person courseCoordinator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,15 +157,6 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public Examination getExamination() {
-		if (examination != null && examination.eIsProxy()) {
-			InternalEObject oldExamination = (InternalEObject) examination;
-			examination = (Examination) eResolveProxy(oldExamination);
-			if (examination != oldExamination) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION, oldExamination, examination));
-			}
-		}
 		return examination;
 	}
 
@@ -184,8 +165,18 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Examination basicGetExamination() {
-		return examination;
+	public NotificationChain basicSetExamination(Examination newExamination, NotificationChain msgs) {
+		Examination oldExamination = examination;
+		examination = newExamination;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION, oldExamination, newExamination);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -194,11 +185,20 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public void setExamination(Examination newExamination) {
-		Examination oldExamination = examination;
-		examination = newExamination;
-		if (eNotificationRequired())
+		if (newExamination != examination) {
+			NotificationChain msgs = null;
+			if (examination != null)
+				msgs = ((InternalEObject) examination).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION, null, msgs);
+			if (newExamination != null)
+				msgs = ((InternalEObject) newExamination).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION, null, msgs);
+			msgs = basicSetExamination(newExamination, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION,
-					oldExamination, examination));
+					newExamination, newExamination));
 	}
 
 	/**
@@ -207,15 +207,6 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public Timetable getTimetable() {
-		if (timetable != null && timetable.eIsProxy()) {
-			InternalEObject oldTimetable = (InternalEObject) timetable;
-			timetable = (Timetable) eResolveProxy(oldTimetable);
-			if (timetable != oldTimetable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE, oldTimetable, timetable));
-			}
-		}
 		return timetable;
 	}
 
@@ -224,8 +215,18 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timetable basicGetTimetable() {
-		return timetable;
+	public NotificationChain basicSetTimetable(Timetable newTimetable, NotificationChain msgs) {
+		Timetable oldTimetable = timetable;
+		timetable = newTimetable;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE, oldTimetable, newTimetable);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -234,11 +235,20 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public void setTimetable(Timetable newTimetable) {
-		Timetable oldTimetable = timetable;
-		timetable = newTimetable;
-		if (eNotificationRequired())
+		if (newTimetable != timetable) {
+			NotificationChain msgs = null;
+			if (timetable != null)
+				msgs = ((InternalEObject) timetable).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE, null, msgs);
+			if (newTimetable != null)
+				msgs = ((InternalEObject) newTimetable).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE, null, msgs);
+			msgs = basicSetTimetable(newTimetable, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE,
-					oldTimetable, timetable));
+					newTimetable, newTimetable));
 	}
 
 	/**
@@ -302,26 +312,24 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public Person getCourseCoordinator() {
-		if (courseCoordinator != null && courseCoordinator.eIsProxy()) {
-			InternalEObject oldCourseCoordinator = (InternalEObject) courseCoordinator;
-			courseCoordinator = (Person) eResolveProxy(oldCourseCoordinator);
-			if (courseCoordinator != oldCourseCoordinator) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Tdt4250casePackage.COURSE_INSTANCE__COURSE_COORDINATOR, oldCourseCoordinator,
-							courseCoordinator));
-			}
-		}
-		return courseCoordinator;
+		Person courseCoordinator = basicGetCourseCoordinator();
+		return courseCoordinator != null && courseCoordinator.eIsProxy()
+				? (Person) eResolveProxy((InternalEObject) courseCoordinator)
+				: courseCoordinator;
 	}
+
+	protected static final String COURSE_COORDINATOR_ROLE_NAME = "Course coordinator";
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Person basicGetCourseCoordinator() {
-		return courseCoordinator;
+		for (CourseRole role : getRole()) {
+			if (role.getName() == COURSE_COORDINATOR_ROLE_NAME) return role.getPerson().get(0);
+		}
+		return null;
 	}
 
 	/**
@@ -330,11 +338,9 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public void setCourseCoordinator(Person newCourseCoordinator) {
-		Person oldCourseCoordinator = courseCoordinator;
-		courseCoordinator = newCourseCoordinator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Tdt4250casePackage.COURSE_INSTANCE__COURSE_COORDINATOR, oldCourseCoordinator, courseCoordinator));
+		// TODO: implement this method to set the 'Course Coordinator' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -406,6 +412,10 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION:
+			return basicSetExamination(null, msgs);
+		case Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE:
+			return basicSetTimetable(null, msgs);
 		case Tdt4250casePackage.COURSE_INSTANCE__ROLE:
 			return ((InternalEList<?>) getRole()).basicRemove(otherEnd, msgs);
 		case Tdt4250casePackage.COURSE_INSTANCE__COURSE:
@@ -439,13 +449,9 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 		case Tdt4250casePackage.COURSE_INSTANCE__SEMESTER:
 			return getSemester();
 		case Tdt4250casePackage.COURSE_INSTANCE__EXAMINATION:
-			if (resolve)
-				return getExamination();
-			return basicGetExamination();
+			return getExamination();
 		case Tdt4250casePackage.COURSE_INSTANCE__TIMETABLE:
-			if (resolve)
-				return getTimetable();
-			return basicGetTimetable();
+			return getTimetable();
 		case Tdt4250casePackage.COURSE_INSTANCE__RESPONSIBLE_DEPARTMENT:
 			if (resolve)
 				return getResponsibleDepartment();
@@ -549,7 +555,7 @@ public class CourseInstanceImpl extends MinimalEObjectImpl.Container implements 
 		case Tdt4250casePackage.COURSE_INSTANCE__ROLE:
 			return role != null && !role.isEmpty();
 		case Tdt4250casePackage.COURSE_INSTANCE__COURSE_COORDINATOR:
-			return courseCoordinator != null;
+			return basicGetCourseCoordinator() != null;
 		case Tdt4250casePackage.COURSE_INSTANCE__COURSE:
 			return getCourse() != null;
 		}

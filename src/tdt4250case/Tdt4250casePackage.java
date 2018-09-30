@@ -131,13 +131,13 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE__RECOMMENDED_COURSE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Credit Reduction</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Credit Reduction Course</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__CREDIT_REDUCTION = 7;
+	int COURSE__CREDIT_REDUCTION_COURSE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' containment reference list.
@@ -149,13 +149,22 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE__INSTANCE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Course Work</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__COURSE_WORK = 9;
+
+	/**
 	 * The number of structural features of the '<em>Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 9;
+	int COURSE_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -167,14 +176,14 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tdt4250case.impl.CourseCreditReductionImpl <em>Course Credit Reduction</em>}' class.
+	 * The meta object id for the '{@link tdt4250case.impl.CreditReductionCourseImpl <em>Credit Reduction Course</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tdt4250case.impl.CourseCreditReductionImpl
-	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCourseCreditReduction()
+	 * @see tdt4250case.impl.CreditReductionCourseImpl
+	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCreditReductionCourse()
 	 * @generated
 	 */
-	int COURSE_CREDIT_REDUCTION = 1;
+	int CREDIT_REDUCTION_COURSE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Reduction</b></em>' attribute.
@@ -183,7 +192,7 @@ public interface Tdt4250casePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_CREDIT_REDUCTION__REDUCTION = 0;
+	int CREDIT_REDUCTION_COURSE__REDUCTION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Course</b></em>' reference.
@@ -192,25 +201,43 @@ public interface Tdt4250casePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_CREDIT_REDUCTION__COURSE = 1;
+	int CREDIT_REDUCTION_COURSE__COURSE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Course Credit Reduction</em>' class.
+	 * The feature id for the '<em><b>From</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_CREDIT_REDUCTION_FEATURE_COUNT = 2;
+	int CREDIT_REDUCTION_COURSE__FROM = 2;
 
 	/**
-	 * The number of operations of the '<em>Course Credit Reduction</em>' class.
+	 * The feature id for the '<em><b>To</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_CREDIT_REDUCTION_OPERATION_COUNT = 0;
+	int CREDIT_REDUCTION_COURSE__TO = 3;
+
+	/**
+	 * The number of structural features of the '<em>Credit Reduction Course</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_REDUCTION_COURSE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Credit Reduction Course</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_REDUCTION_COURSE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tdt4250case.impl.StudyprogramImpl <em>Studyprogram</em>}' class.
@@ -278,7 +305,7 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE_INSTANCE__SEMESTER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Examination</b></em>' reference.
+	 * The feature id for the '<em><b>Examination</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -287,7 +314,7 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE_INSTANCE__EXAMINATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Timetable</b></em>' reference.
+	 * The feature id for the '<em><b>Timetable</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -663,7 +690,7 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE_ROLE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Person</b></em>' reference.
+	 * The feature id for the '<em><b>Person</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -690,6 +717,52 @@ public interface Tdt4250casePackage extends EPackage {
 	int COURSE_ROLE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link tdt4250case.impl.CourseWorkImpl <em>Course Work</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tdt4250case.impl.CourseWorkImpl
+	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCourseWork()
+	 * @generated
+	 */
+	int COURSE_WORK = 11;
+
+	/**
+	 * The feature id for the '<em><b>Hours</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_WORK__HOURS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_WORK__TYPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Course Work</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_WORK_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Course Work</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_WORK_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Semester</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -697,7 +770,7 @@ public interface Tdt4250casePackage extends EPackage {
 	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getSemester()
 	 * @generated
 	 */
-	int SEMESTER = 11;
+	int SEMESTER = 12;
 
 	/**
 	 * The meta object id for the '<em>Timeslot</em>' data type.
@@ -707,7 +780,7 @@ public interface Tdt4250casePackage extends EPackage {
 	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getTimeslot()
 	 * @generated
 	 */
-	int TIMESLOT = 12;
+	int TIMESLOT = 13;
 
 	/**
 	 * The meta object id for the '<em>Examination Activity Weight</em>' data type.
@@ -717,7 +790,7 @@ public interface Tdt4250casePackage extends EPackage {
 	 * @see tdt4250case.impl.Tdt4250casePackageImpl#getExaminationActivityWeight()
 	 * @generated
 	 */
-	int EXAMINATION_ACTIVITY_WEIGHT = 13;
+	int EXAMINATION_ACTIVITY_WEIGHT = 14;
 
 	/**
 	 * Returns the meta object for class '{@link tdt4250case.Course <em>Course</em>}'.
@@ -807,15 +880,15 @@ public interface Tdt4250casePackage extends EPackage {
 	EReference getCourse_RecommendedCourse();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tdt4250case.Course#getCreditReduction <em>Credit Reduction</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tdt4250case.Course#getCreditReductionCourse <em>Credit Reduction Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Credit Reduction</em>'.
-	 * @see tdt4250case.Course#getCreditReduction()
+	 * @return the meta object for the containment reference list '<em>Credit Reduction Course</em>'.
+	 * @see tdt4250case.Course#getCreditReductionCourse()
 	 * @see #getCourse()
 	 * @generated
 	 */
-	EReference getCourse_CreditReduction();
+	EReference getCourse_CreditReductionCourse();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link tdt4250case.Course#getInstance <em>Instance</em>}'.
@@ -829,36 +902,69 @@ public interface Tdt4250casePackage extends EPackage {
 	EReference getCourse_Instance();
 
 	/**
-	 * Returns the meta object for class '{@link tdt4250case.CourseCreditReduction <em>Course Credit Reduction</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tdt4250case.Course#getCourseWork <em>Course Work</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Course Credit Reduction</em>'.
-	 * @see tdt4250case.CourseCreditReduction
+	 * @return the meta object for the containment reference list '<em>Course Work</em>'.
+	 * @see tdt4250case.Course#getCourseWork()
+	 * @see #getCourse()
 	 * @generated
 	 */
-	EClass getCourseCreditReduction();
+	EReference getCourse_CourseWork();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tdt4250case.CourseCreditReduction#getReduction <em>Reduction</em>}'.
+	 * Returns the meta object for class '{@link tdt4250case.CreditReductionCourse <em>Credit Reduction Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Credit Reduction Course</em>'.
+	 * @see tdt4250case.CreditReductionCourse
+	 * @generated
+	 */
+	EClass getCreditReductionCourse();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250case.CreditReductionCourse#getReduction <em>Reduction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Reduction</em>'.
-	 * @see tdt4250case.CourseCreditReduction#getReduction()
-	 * @see #getCourseCreditReduction()
+	 * @see tdt4250case.CreditReductionCourse#getReduction()
+	 * @see #getCreditReductionCourse()
 	 * @generated
 	 */
-	EAttribute getCourseCreditReduction_Reduction();
+	EAttribute getCreditReductionCourse_Reduction();
 
 	/**
-	 * Returns the meta object for the reference '{@link tdt4250case.CourseCreditReduction#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the reference '{@link tdt4250case.CreditReductionCourse#getCourse <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Course</em>'.
-	 * @see tdt4250case.CourseCreditReduction#getCourse()
-	 * @see #getCourseCreditReduction()
+	 * @see tdt4250case.CreditReductionCourse#getCourse()
+	 * @see #getCreditReductionCourse()
 	 * @generated
 	 */
-	EReference getCourseCreditReduction_Course();
+	EReference getCreditReductionCourse_Course();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250case.CreditReductionCourse#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From</em>'.
+	 * @see tdt4250case.CreditReductionCourse#getFrom()
+	 * @see #getCreditReductionCourse()
+	 * @generated
+	 */
+	EAttribute getCreditReductionCourse_From();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250case.CreditReductionCourse#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>To</em>'.
+	 * @see tdt4250case.CreditReductionCourse#getTo()
+	 * @see #getCreditReductionCourse()
+	 * @generated
+	 */
+	EAttribute getCreditReductionCourse_To();
 
 	/**
 	 * Returns the meta object for class '{@link tdt4250case.Studyprogram <em>Studyprogram</em>}'.
@@ -914,10 +1020,10 @@ public interface Tdt4250casePackage extends EPackage {
 	EAttribute getCourseInstance_Semester();
 
 	/**
-	 * Returns the meta object for the reference '{@link tdt4250case.CourseInstance#getExamination <em>Examination</em>}'.
+	 * Returns the meta object for the containment reference '{@link tdt4250case.CourseInstance#getExamination <em>Examination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Examination</em>'.
+	 * @return the meta object for the containment reference '<em>Examination</em>'.
 	 * @see tdt4250case.CourseInstance#getExamination()
 	 * @see #getCourseInstance()
 	 * @generated
@@ -925,10 +1031,10 @@ public interface Tdt4250casePackage extends EPackage {
 	EReference getCourseInstance_Examination();
 
 	/**
-	 * Returns the meta object for the reference '{@link tdt4250case.CourseInstance#getTimetable <em>Timetable</em>}'.
+	 * Returns the meta object for the containment reference '{@link tdt4250case.CourseInstance#getTimetable <em>Timetable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Timetable</em>'.
+	 * @return the meta object for the containment reference '<em>Timetable</em>'.
 	 * @see tdt4250case.CourseInstance#getTimetable()
 	 * @see #getCourseInstance()
 	 * @generated
@@ -1215,15 +1321,47 @@ public interface Tdt4250casePackage extends EPackage {
 	EAttribute getCourseRole_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link tdt4250case.CourseRole#getPerson <em>Person</em>}'.
+	 * Returns the meta object for the reference list '{@link tdt4250case.CourseRole#getPerson <em>Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Person</em>'.
+	 * @return the meta object for the reference list '<em>Person</em>'.
 	 * @see tdt4250case.CourseRole#getPerson()
 	 * @see #getCourseRole()
 	 * @generated
 	 */
 	EReference getCourseRole_Person();
+
+	/**
+	 * Returns the meta object for class '{@link tdt4250case.CourseWork <em>Course Work</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Course Work</em>'.
+	 * @see tdt4250case.CourseWork
+	 * @generated
+	 */
+	EClass getCourseWork();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250case.CourseWork#getHours <em>Hours</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hours</em>'.
+	 * @see tdt4250case.CourseWork#getHours()
+	 * @see #getCourseWork()
+	 * @generated
+	 */
+	EAttribute getCourseWork_Hours();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250case.CourseWork#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see tdt4250case.CourseWork#getType()
+	 * @see #getCourseWork()
+	 * @generated
+	 */
+	EAttribute getCourseWork_Type();
 
 	/**
 	 * Returns the meta object for data type '{@link tdt4250case.util.Semester <em>Semester</em>}'.
@@ -1348,12 +1486,12 @@ public interface Tdt4250casePackage extends EPackage {
 		EReference COURSE__RECOMMENDED_COURSE = eINSTANCE.getCourse_RecommendedCourse();
 
 		/**
-		 * The meta object literal for the '<em><b>Credit Reduction</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Credit Reduction Course</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COURSE__CREDIT_REDUCTION = eINSTANCE.getCourse_CreditReduction();
+		EReference COURSE__CREDIT_REDUCTION_COURSE = eINSTANCE.getCourse_CreditReductionCourse();
 
 		/**
 		 * The meta object literal for the '<em><b>Instance</b></em>' containment reference list feature.
@@ -1364,14 +1502,22 @@ public interface Tdt4250casePackage extends EPackage {
 		EReference COURSE__INSTANCE = eINSTANCE.getCourse_Instance();
 
 		/**
-		 * The meta object literal for the '{@link tdt4250case.impl.CourseCreditReductionImpl <em>Course Credit Reduction</em>}' class.
+		 * The meta object literal for the '<em><b>Course Work</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tdt4250case.impl.CourseCreditReductionImpl
-		 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCourseCreditReduction()
 		 * @generated
 		 */
-		EClass COURSE_CREDIT_REDUCTION = eINSTANCE.getCourseCreditReduction();
+		EReference COURSE__COURSE_WORK = eINSTANCE.getCourse_CourseWork();
+
+		/**
+		 * The meta object literal for the '{@link tdt4250case.impl.CreditReductionCourseImpl <em>Credit Reduction Course</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tdt4250case.impl.CreditReductionCourseImpl
+		 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCreditReductionCourse()
+		 * @generated
+		 */
+		EClass CREDIT_REDUCTION_COURSE = eINSTANCE.getCreditReductionCourse();
 
 		/**
 		 * The meta object literal for the '<em><b>Reduction</b></em>' attribute feature.
@@ -1379,7 +1525,7 @@ public interface Tdt4250casePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COURSE_CREDIT_REDUCTION__REDUCTION = eINSTANCE.getCourseCreditReduction_Reduction();
+		EAttribute CREDIT_REDUCTION_COURSE__REDUCTION = eINSTANCE.getCreditReductionCourse_Reduction();
 
 		/**
 		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
@@ -1387,7 +1533,23 @@ public interface Tdt4250casePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COURSE_CREDIT_REDUCTION__COURSE = eINSTANCE.getCourseCreditReduction_Course();
+		EReference CREDIT_REDUCTION_COURSE__COURSE = eINSTANCE.getCreditReductionCourse_Course();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_REDUCTION_COURSE__FROM = eINSTANCE.getCreditReductionCourse_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDIT_REDUCTION_COURSE__TO = eINSTANCE.getCreditReductionCourse_To();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250case.impl.StudyprogramImpl <em>Studyprogram</em>}' class.
@@ -1434,7 +1596,7 @@ public interface Tdt4250casePackage extends EPackage {
 		EAttribute COURSE_INSTANCE__SEMESTER = eINSTANCE.getCourseInstance_Semester();
 
 		/**
-		 * The meta object literal for the '<em><b>Examination</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Examination</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1442,7 +1604,7 @@ public interface Tdt4250casePackage extends EPackage {
 		EReference COURSE_INSTANCE__EXAMINATION = eINSTANCE.getCourseInstance_Examination();
 
 		/**
-		 * The meta object literal for the '<em><b>Timetable</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Timetable</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1672,12 +1834,38 @@ public interface Tdt4250casePackage extends EPackage {
 		EAttribute COURSE_ROLE__NAME = eINSTANCE.getCourseRole_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Person</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COURSE_ROLE__PERSON = eINSTANCE.getCourseRole_Person();
+
+		/**
+		 * The meta object literal for the '{@link tdt4250case.impl.CourseWorkImpl <em>Course Work</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tdt4250case.impl.CourseWorkImpl
+		 * @see tdt4250case.impl.Tdt4250casePackageImpl#getCourseWork()
+		 * @generated
+		 */
+		EClass COURSE_WORK = eINSTANCE.getCourseWork();
+
+		/**
+		 * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE_WORK__HOURS = eINSTANCE.getCourseWork_Hours();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE_WORK__TYPE = eINSTANCE.getCourseWork_Type();
 
 		/**
 		 * The meta object literal for the '<em>Semester</em>' data type.

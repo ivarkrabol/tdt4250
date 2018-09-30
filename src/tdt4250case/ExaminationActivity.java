@@ -35,7 +35,7 @@ public interface ExaminationActivity extends EObject {
 	 * @return the value of the '<em>Evaluation Form</em>' attribute.
 	 * @see #setEvaluationForm(String)
 	 * @see tdt4250case.Tdt4250casePackage#getExaminationActivity_EvaluationForm()
-	 * @model
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getEvaluationForm();
@@ -61,7 +61,7 @@ public interface ExaminationActivity extends EObject {
 	 * @return the value of the '<em>Weighting</em>' attribute.
 	 * @see #setWeighting(ExaminationActivityWeight)
 	 * @see tdt4250case.Tdt4250casePackage#getExaminationActivity_Weighting()
-	 * @model dataType="tdt4250case.ExaminationActivityWeight"
+	 * @model dataType="tdt4250case.ExaminationActivityWeight" required="true"
 	 * @generated
 	 */
 	ExaminationActivityWeight getWeighting();

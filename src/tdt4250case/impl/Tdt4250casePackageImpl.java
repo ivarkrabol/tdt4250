@@ -12,9 +12,10 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tdt4250case.Course;
-import tdt4250case.CourseCreditReduction;
 import tdt4250case.CourseInstance;
 import tdt4250case.CourseRole;
+import tdt4250case.CourseWork;
+import tdt4250case.CreditReductionCourse;
 import tdt4250case.Department;
 import tdt4250case.Examination;
 import tdt4250case.ExaminationActivity;
@@ -49,7 +50,7 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass courseCreditReductionEClass = null;
+	private EClass creditReductionCourseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,6 +114,13 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * @generated
 	 */
 	private EClass courseRoleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass courseWorkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,7 +291,7 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCourse_CreditReduction() {
+	public EReference getCourse_CreditReductionCourse() {
 		return (EReference) courseEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -301,8 +309,8 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCourseCreditReduction() {
-		return courseCreditReductionEClass;
+	public EReference getCourse_CourseWork() {
+		return (EReference) courseEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -310,8 +318,8 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCourseCreditReduction_Reduction() {
-		return (EAttribute) courseCreditReductionEClass.getEStructuralFeatures().get(0);
+	public EClass getCreditReductionCourse() {
+		return creditReductionCourseEClass;
 	}
 
 	/**
@@ -319,8 +327,35 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCourseCreditReduction_Course() {
-		return (EReference) courseCreditReductionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getCreditReductionCourse_Reduction() {
+		return (EAttribute) creditReductionCourseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCreditReductionCourse_Course() {
+		return (EReference) creditReductionCourseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreditReductionCourse_From() {
+		return (EAttribute) creditReductionCourseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreditReductionCourse_To() {
+		return (EAttribute) creditReductionCourseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -634,6 +669,33 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCourseWork() {
+		return courseWorkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCourseWork_Hours() {
+		return (EAttribute) courseWorkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCourseWork_Type() {
+		return (EAttribute) courseWorkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getSemester() {
 		return semesterEDataType;
 	}
@@ -693,12 +755,15 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 		createEAttribute(courseEClass, COURSE__CREDITS);
 		createEReference(courseEClass, COURSE__REQUIRED_COURSE);
 		createEReference(courseEClass, COURSE__RECOMMENDED_COURSE);
-		createEReference(courseEClass, COURSE__CREDIT_REDUCTION);
+		createEReference(courseEClass, COURSE__CREDIT_REDUCTION_COURSE);
 		createEReference(courseEClass, COURSE__INSTANCE);
+		createEReference(courseEClass, COURSE__COURSE_WORK);
 
-		courseCreditReductionEClass = createEClass(COURSE_CREDIT_REDUCTION);
-		createEAttribute(courseCreditReductionEClass, COURSE_CREDIT_REDUCTION__REDUCTION);
-		createEReference(courseCreditReductionEClass, COURSE_CREDIT_REDUCTION__COURSE);
+		creditReductionCourseEClass = createEClass(CREDIT_REDUCTION_COURSE);
+		createEAttribute(creditReductionCourseEClass, CREDIT_REDUCTION_COURSE__REDUCTION);
+		createEReference(creditReductionCourseEClass, CREDIT_REDUCTION_COURSE__COURSE);
+		createEAttribute(creditReductionCourseEClass, CREDIT_REDUCTION_COURSE__FROM);
+		createEAttribute(creditReductionCourseEClass, CREDIT_REDUCTION_COURSE__TO);
 
 		studyprogramEClass = createEClass(STUDYPROGRAM);
 		createEAttribute(studyprogramEClass, STUDYPROGRAM__CODE);
@@ -743,6 +808,10 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 		createEAttribute(courseRoleEClass, COURSE_ROLE__NAME);
 		createEReference(courseRoleEClass, COURSE_ROLE__PERSON);
 
+		courseWorkEClass = createEClass(COURSE_WORK);
+		createEAttribute(courseWorkEClass, COURSE_WORK__HOURS);
+		createEAttribute(courseWorkEClass, COURSE_WORK__TYPE);
+
 		// Create data types
 		semesterEDataType = createEDataType(SEMESTER);
 		timeslotEDataType = createEDataType(TIMESLOT);
@@ -785,7 +854,7 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 				null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 1, 1, Course.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 1, 1, Course.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Content(), ecorePackage.getEString(), "content", null, 1, 1, Course.class,
@@ -798,48 +867,57 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 		initEReference(getCourse_RecommendedCourse(), this.getCourse(), null, "recommendedCourse", null, 0, -1,
 				Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourse_CreditReduction(), this.getCourseCreditReduction(), null, "creditReduction", null, 0,
-				-1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCourse_CreditReductionCourse(), this.getCreditReductionCourse(), null,
+				"creditReductionCourse", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourse_Instance(), this.getCourseInstance(), this.getCourseInstance_Course(), "instance",
 				null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(courseCreditReductionEClass, CourseCreditReduction.class, "CourseCreditReduction", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCourseCreditReduction_Reduction(), ecorePackage.getEFloat(), "reduction", "7.5", 1, 1,
-				CourseCreditReduction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+		initEReference(getCourse_CourseWork(), this.getCourseWork(), null, "courseWork", null, 1, -1, Course.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourseCreditReduction_Course(), this.getCourse(), null, "course", null, 1, 1,
-				CourseCreditReduction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+
+		initEClass(creditReductionCourseEClass, CreditReductionCourse.class, "CreditReductionCourse", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreditReductionCourse_Reduction(), ecorePackage.getEFloat(), "reduction", "7.5", 1, 1,
+				CreditReductionCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreditReductionCourse_Course(), this.getCourse(), null, "course", null, 1, 1,
+				CreditReductionCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreditReductionCourse_From(), ecorePackage.getEDate(), "from", null, 1, 1,
+				CreditReductionCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreditReductionCourse_To(), ecorePackage.getEDate(), "to", null, 1, 1,
+				CreditReductionCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(studyprogramEClass, Studyprogram.class, "Studyprogram", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStudyprogram_Code(), ecorePackage.getEString(), "code", null, 1, 1, Studyprogram.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudyprogram_Course(), this.getCourse(), this.getCourse_Studyprogram(), "course", null, 0, -1,
 				Studyprogram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(courseInstanceEClass, CourseInstance.class, "CourseInstance", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCourseInstance_Semester(), this.getSemester(), "semester", null, 0, 1, CourseInstance.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourseInstance_Semester(), this.getSemester(), "semester", null, 1, 1, CourseInstance.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseInstance_Examination(), this.getExamination(), null, "examination", null, 1, 1,
-				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseInstance_Timetable(), this.getTimetable(), null, "timetable", null, 1, 1,
-				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseInstance_ResponsibleDepartment(), this.getDepartment(), null, "responsibleDepartment",
 				null, 1, 1, CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourseInstance_Role(), this.getCourseRole(), null, "role", null, 0, -1, CourseInstance.class,
+		initEReference(getCourseInstance_Role(), this.getCourseRole(), null, "role", null, 1, -1, CourseInstance.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourseInstance_CourseCoordinator(), this.getPerson(), null, "courseCoordinator", null, 0, 1,
-				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getCourseInstance_CourseCoordinator(), this.getPerson(), null, "courseCoordinator", null, 1, 1,
+				CourseInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseInstance_Course(), this.getCourse(), this.getCourse_Instance(), "course", null, 1, 1,
 				CourseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
@@ -853,10 +931,10 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 
 		initEClass(examinationActivityEClass, ExaminationActivity.class, "ExaminationActivity", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExaminationActivity_EvaluationForm(), ecorePackage.getEString(), "evaluationForm", null, 0, 1,
-				ExaminationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExaminationActivity_Weighting(), this.getExaminationActivityWeight(), "weighting", null, 0, 1,
+		initEAttribute(getExaminationActivity_EvaluationForm(), ecorePackage.getEString(), "evaluationForm", null, 1, 1,
+				ExaminationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExaminationActivity_Weighting(), this.getExaminationActivityWeight(), "weighting", null, 1, 1,
 				ExaminationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -868,13 +946,13 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 
 		initEClass(scheduledActivityEClass, ScheduledActivity.class, "ScheduledActivity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getScheduledActivity_Timeslot(), this.getTimeslot(), "timeslot", null, 0, 1,
+		initEAttribute(getScheduledActivity_Timeslot(), this.getTimeslot(), "timeslot", null, 1, 1,
 				ScheduledActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getScheduledActivity_Activity(), ecorePackage.getEString(), "activity", null, 0, 1,
+		initEAttribute(getScheduledActivity_Activity(), ecorePackage.getEString(), "activity", null, 1, 1,
 				ScheduledActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getScheduledActivity_Room(), ecorePackage.getEString(), "room", null, 0, 1,
+		initEAttribute(getScheduledActivity_Room(), ecorePackage.getEString(), "room", null, 1, 1,
 				ScheduledActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getScheduledActivity_ReservedFor(), this.getStudyprogram(), null, "reservedFor", null, 1, -1,
@@ -884,7 +962,7 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDepartment_Code(), ecorePackage.getEString(), "code", null, 1, 1, Department.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "name", null, 1, 1, Department.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Employee(), this.getPerson(), null, "employee", null, 0, -1, Department.class,
@@ -892,9 +970,9 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPerson_Username(), ecorePackage.getEString(), "username", null, 0, 1, Person.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT,
+		initEAttribute(getPerson_Username(), ecorePackage.getEString(), "username", null, 1, 1, Person.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 1, 1, Person.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPerson_Role(), this.getCourseRole(), this.getCourseRole_Person(), "role", null, 0, -1,
 				Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -904,9 +982,16 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourseRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, CourseRole.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourseRole_Person(), this.getPerson(), this.getPerson_Role(), "person", null, 1, 1,
+		initEReference(getCourseRole_Person(), this.getPerson(), this.getPerson_Role(), "person", null, 1, -1,
 				CourseRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(courseWorkEClass, CourseWork.class, "CourseWork", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCourseWork_Hours(), ecorePackage.getEInt(), "hours", null, 1, 1, CourseWork.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourseWork_Type(), ecorePackage.getEString(), "type", null, 1, 1, CourseWork.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(semesterEDataType, Semester.class, "Semester", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -931,6 +1016,8 @@ public class Tdt4250casePackageImpl extends EPackageImpl implements Tdt4250caseP
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation(this, source, new String[] {});
+		addAnnotation(creditReductionCourseEClass, source, new String[] { "constraints", "toAfterFrom" });
+		addAnnotation(examinationEClass, source, new String[] { "constraints", "sumIs100" });
 		addAnnotation(timetableEClass, source, new String[] { "constraints", "noOverlappingTimeslots" });
 	}
 

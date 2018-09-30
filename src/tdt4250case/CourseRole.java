@@ -2,6 +2,7 @@
  */
 package tdt4250case;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,7 +50,8 @@ public interface CourseRole extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Person</b></em>' reference.
+	 * Returns the value of the '<em><b>Person</b></em>' reference list.
+	 * The list contents are of type {@link tdt4250case.Person}.
 	 * It is bidirectional and its opposite is '{@link tdt4250case.Person#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -57,23 +59,12 @@ public interface CourseRole extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Person</em>' reference.
-	 * @see #setPerson(Person)
+	 * @return the value of the '<em>Person</em>' reference list.
 	 * @see tdt4250case.Tdt4250casePackage#getCourseRole_Person()
 	 * @see tdt4250case.Person#getRole
 	 * @model opposite="role" required="true"
 	 * @generated
 	 */
-	Person getPerson();
-
-	/**
-	 * Sets the value of the '{@link tdt4250case.CourseRole#getPerson <em>Person</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Person</em>' reference.
-	 * @see #getPerson()
-	 * @generated
-	 */
-	void setPerson(Person value);
+	EList<Person> getPerson();
 
 } // CourseRole

@@ -63,8 +63,8 @@ public class Tdt4250caseFactoryImpl extends EFactoryImpl implements Tdt4250caseF
 		switch (eClass.getClassifierID()) {
 		case Tdt4250casePackage.COURSE:
 			return createCourse();
-		case Tdt4250casePackage.COURSE_CREDIT_REDUCTION:
-			return createCourseCreditReduction();
+		case Tdt4250casePackage.CREDIT_REDUCTION_COURSE:
+			return createCreditReductionCourse();
 		case Tdt4250casePackage.STUDYPROGRAM:
 			return createStudyprogram();
 		case Tdt4250casePackage.COURSE_INSTANCE:
@@ -83,6 +83,8 @@ public class Tdt4250caseFactoryImpl extends EFactoryImpl implements Tdt4250caseF
 			return createPerson();
 		case Tdt4250casePackage.COURSE_ROLE:
 			return createCourseRole();
+		case Tdt4250casePackage.COURSE_WORK:
+			return createCourseWork();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -141,9 +143,9 @@ public class Tdt4250caseFactoryImpl extends EFactoryImpl implements Tdt4250caseF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CourseCreditReduction createCourseCreditReduction() {
-		CourseCreditReductionImpl courseCreditReduction = new CourseCreditReductionImpl();
-		return courseCreditReduction;
+	public CreditReductionCourse createCreditReductionCourse() {
+		CreditReductionCourseImpl creditReductionCourse = new CreditReductionCourseImpl();
+		return creditReductionCourse;
 	}
 
 	/**
@@ -234,6 +236,16 @@ public class Tdt4250caseFactoryImpl extends EFactoryImpl implements Tdt4250caseF
 	public CourseRole createCourseRole() {
 		CourseRoleImpl courseRole = new CourseRoleImpl();
 		return courseRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CourseWork createCourseWork() {
+		CourseWorkImpl courseWork = new CourseWorkImpl();
+		return courseWork;
 	}
 
 	/**

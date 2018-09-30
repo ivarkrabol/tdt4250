@@ -22,8 +22,9 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tdt4250case.Course;
-import tdt4250case.CourseCreditReduction;
 import tdt4250case.CourseInstance;
+import tdt4250case.CourseWork;
+import tdt4250case.CreditReductionCourse;
 import tdt4250case.Studyprogram;
 import tdt4250case.Tdt4250casePackage;
 
@@ -42,8 +43,9 @@ import tdt4250case.Tdt4250casePackage;
  *   <li>{@link tdt4250case.impl.CourseImpl#getCredits <em>Credits</em>}</li>
  *   <li>{@link tdt4250case.impl.CourseImpl#getRequiredCourse <em>Required Course</em>}</li>
  *   <li>{@link tdt4250case.impl.CourseImpl#getRecommendedCourse <em>Recommended Course</em>}</li>
- *   <li>{@link tdt4250case.impl.CourseImpl#getCreditReduction <em>Credit Reduction</em>}</li>
+ *   <li>{@link tdt4250case.impl.CourseImpl#getCreditReductionCourse <em>Credit Reduction Course</em>}</li>
  *   <li>{@link tdt4250case.impl.CourseImpl#getInstance <em>Instance</em>}</li>
+ *   <li>{@link tdt4250case.impl.CourseImpl#getCourseWork <em>Course Work</em>}</li>
  * </ul>
  *
  * @generated
@@ -160,14 +162,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected EList<Course> recommendedCourse;
 
 	/**
-	 * The cached value of the '{@link #getCreditReduction() <em>Credit Reduction</em>}' containment reference list.
+	 * The cached value of the '{@link #getCreditReductionCourse() <em>Credit Reduction Course</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCreditReduction()
+	 * @see #getCreditReductionCourse()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CourseCreditReduction> creditReduction;
+	protected EList<CreditReductionCourse> creditReductionCourse;
 
 	/**
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' containment reference list.
@@ -178,6 +180,16 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected EList<CourseInstance> instance;
+
+	/**
+	 * The cached value of the '{@link #getCourseWork() <em>Course Work</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseWork()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseWork> courseWork;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -328,12 +340,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CourseCreditReduction> getCreditReduction() {
-		if (creditReduction == null) {
-			creditReduction = new EObjectContainmentEList<CourseCreditReduction>(CourseCreditReduction.class, this,
-					Tdt4250casePackage.COURSE__CREDIT_REDUCTION);
+	public EList<CreditReductionCourse> getCreditReductionCourse() {
+		if (creditReductionCourse == null) {
+			creditReductionCourse = new EObjectContainmentEList<CreditReductionCourse>(CreditReductionCourse.class,
+					this, Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE);
 		}
-		return creditReduction;
+		return creditReductionCourse;
 	}
 
 	/**
@@ -347,6 +359,19 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 					Tdt4250casePackage.COURSE__INSTANCE, Tdt4250casePackage.COURSE_INSTANCE__COURSE);
 		}
 		return instance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CourseWork> getCourseWork() {
+		if (courseWork == null) {
+			courseWork = new EObjectContainmentEList<CourseWork>(CourseWork.class, this,
+					Tdt4250casePackage.COURSE__COURSE_WORK);
+		}
+		return courseWork;
 	}
 
 	/**
@@ -376,10 +401,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		switch (featureID) {
 		case Tdt4250casePackage.COURSE__STUDYPROGRAM:
 			return ((InternalEList<?>) getStudyprogram()).basicRemove(otherEnd, msgs);
-		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION:
-			return ((InternalEList<?>) getCreditReduction()).basicRemove(otherEnd, msgs);
+		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE:
+			return ((InternalEList<?>) getCreditReductionCourse()).basicRemove(otherEnd, msgs);
 		case Tdt4250casePackage.COURSE__INSTANCE:
 			return ((InternalEList<?>) getInstance()).basicRemove(otherEnd, msgs);
+		case Tdt4250casePackage.COURSE__COURSE_WORK:
+			return ((InternalEList<?>) getCourseWork()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -406,10 +433,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return getRequiredCourse();
 		case Tdt4250casePackage.COURSE__RECOMMENDED_COURSE:
 			return getRecommendedCourse();
-		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION:
-			return getCreditReduction();
+		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE:
+			return getCreditReductionCourse();
 		case Tdt4250casePackage.COURSE__INSTANCE:
 			return getInstance();
+		case Tdt4250casePackage.COURSE__COURSE_WORK:
+			return getCourseWork();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,13 +476,17 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			getRecommendedCourse().clear();
 			getRecommendedCourse().addAll((Collection<? extends Course>) newValue);
 			return;
-		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION:
-			getCreditReduction().clear();
-			getCreditReduction().addAll((Collection<? extends CourseCreditReduction>) newValue);
+		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE:
+			getCreditReductionCourse().clear();
+			getCreditReductionCourse().addAll((Collection<? extends CreditReductionCourse>) newValue);
 			return;
 		case Tdt4250casePackage.COURSE__INSTANCE:
 			getInstance().clear();
 			getInstance().addAll((Collection<? extends CourseInstance>) newValue);
+			return;
+		case Tdt4250casePackage.COURSE__COURSE_WORK:
+			getCourseWork().clear();
+			getCourseWork().addAll((Collection<? extends CourseWork>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -488,11 +521,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		case Tdt4250casePackage.COURSE__RECOMMENDED_COURSE:
 			getRecommendedCourse().clear();
 			return;
-		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION:
-			getCreditReduction().clear();
+		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE:
+			getCreditReductionCourse().clear();
 			return;
 		case Tdt4250casePackage.COURSE__INSTANCE:
 			getInstance().clear();
+			return;
+		case Tdt4250casePackage.COURSE__COURSE_WORK:
+			getCourseWork().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -520,10 +556,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return requiredCourse != null && !requiredCourse.isEmpty();
 		case Tdt4250casePackage.COURSE__RECOMMENDED_COURSE:
 			return recommendedCourse != null && !recommendedCourse.isEmpty();
-		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION:
-			return creditReduction != null && !creditReduction.isEmpty();
+		case Tdt4250casePackage.COURSE__CREDIT_REDUCTION_COURSE:
+			return creditReductionCourse != null && !creditReductionCourse.isEmpty();
 		case Tdt4250casePackage.COURSE__INSTANCE:
 			return instance != null && !instance.isEmpty();
+		case Tdt4250casePackage.COURSE__COURSE_WORK:
+			return courseWork != null && !courseWork.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,6 +1,7 @@
 /**
  */
 package tdt4250case.util;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -89,8 +90,8 @@ public class Tdt4250caseValidator extends EObjectValidator {
 		switch (classifierID) {
 		case Tdt4250casePackage.COURSE:
 			return validateCourse((Course) value, diagnostics, context);
-		case Tdt4250casePackage.COURSE_CREDIT_REDUCTION:
-			return validateCourseCreditReduction((CourseCreditReduction) value, diagnostics, context);
+		case Tdt4250casePackage.CREDIT_REDUCTION_COURSE:
+			return validateCreditReductionCourse((CreditReductionCourse) value, diagnostics, context);
 		case Tdt4250casePackage.STUDYPROGRAM:
 			return validateStudyprogram((Studyprogram) value, diagnostics, context);
 		case Tdt4250casePackage.COURSE_INSTANCE:
@@ -109,6 +110,8 @@ public class Tdt4250caseValidator extends EObjectValidator {
 			return validatePerson((Person) value, diagnostics, context);
 		case Tdt4250casePackage.COURSE_ROLE:
 			return validateCourseRole((CourseRole) value, diagnostics, context);
+		case Tdt4250casePackage.COURSE_WORK:
+			return validateCourseWork((CourseWork) value, diagnostics, context);
 		case Tdt4250casePackage.SEMESTER:
 			return validateSemester((Semester) value, diagnostics, context);
 		case Tdt4250casePackage.TIMESLOT:
@@ -134,9 +137,50 @@ public class Tdt4250caseValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCourseCreditReduction(CourseCreditReduction courseCreditReduction,
+	public boolean validateCreditReductionCourse(CreditReductionCourse creditReductionCourse,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(courseCreditReduction, diagnostics, context);
+		if (!validate_NoCircularContainment(creditReductionCourse, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(creditReductionCourse, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCreditReductionCourse_toAfterFrom(creditReductionCourse, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the toAfterFrom constraint of '<em>Credit Reduction Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateCreditReductionCourse_toAfterFrom(CreditReductionCourse creditReductionCourse,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (creditReductionCourse.getFrom() != null
+				&& creditReductionCourse.getTo() != null
+				&& !creditReductionCourse.getFrom().before(creditReductionCourse.getTo())) {
+			if (diagnostics != null) {
+				diagnostics.add(
+						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+								new Object[] { "toAfterFrom", getObjectLabel(creditReductionCourse, context) },
+								new Object[] { creditReductionCourse }, context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -166,7 +210,48 @@ public class Tdt4250caseValidator extends EObjectValidator {
 	 */
 	public boolean validateExamination(Examination examination, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(examination, diagnostics, context);
+		if (!validate_NoCircularContainment(examination, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(examination, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateExamination_sumIs100(examination, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the sumIs100 constraint of '<em>Examination</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateExamination_sumIs100(Examination examination, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		int sum = 0;
+		for (ExaminationActivity activity : examination.getActivity()) sum += activity.getWeighting().weight;
+		if (examination.getActivity().size() > 0 && sum != 100) {
+			if (diagnostics != null) {
+				diagnostics.add(
+						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+								new Object[] { "sumIs100", getObjectLabel(examination, context) },
+								new Object[] { examination }, context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -226,7 +311,8 @@ public class Tdt4250caseValidator extends EObjectValidator {
 					break;
 				}
 			}
-			if (hasOverlap) break;
+			if (hasOverlap)
+				break;
 		}
 		if (hasOverlap) {
 			if (diagnostics != null) {
@@ -275,6 +361,15 @@ public class Tdt4250caseValidator extends EObjectValidator {
 	 */
 	public boolean validateCourseRole(CourseRole courseRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(courseRole, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseWork(CourseWork courseWork, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(courseWork, diagnostics, context);
 	}
 
 	/**

@@ -5,7 +5,7 @@ import java.time.Year;
 public class Semester {
 
 	public enum Type {
-		FALL("AUTUMN"), SPRING("SPRING");
+		AUTUMN("AUTUMN"), SPRING("SPRING");
 
 		public static Type parse(String text) {
 			for(Type type : Type.values()) {
@@ -46,7 +46,24 @@ public class Semester {
 	}
 
 	public int ordinal() {
-		return 2 * year.getValue() + (type == Type.FALL ? 1 : 0); 
+		return 2 * year.getValue() + (type == Type.AUTUMN ? 1 : 0); 
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((year == null) ? 0 : year.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return obj == this
+				|| (obj instanceof Semester
+						&& ((Semester)obj).type == type
+						&& ((Semester)obj).year.equals(year));
 	}
 
 }

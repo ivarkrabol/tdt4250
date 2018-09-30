@@ -42,7 +42,7 @@ public interface CourseInstance extends EObject {
 	 * @return the value of the '<em>Semester</em>' attribute.
 	 * @see #setSemester(Semester)
 	 * @see tdt4250case.Tdt4250casePackage#getCourseInstance_Semester()
-	 * @model dataType="tdt4250case.Semester"
+	 * @model id="true" dataType="tdt4250case.Semester" required="true"
 	 * @generated
 	 */
 	Semester getSemester();
@@ -58,52 +58,52 @@ public interface CourseInstance extends EObject {
 	void setSemester(Semester value);
 
 	/**
-	 * Returns the value of the '<em><b>Examination</b></em>' reference.
+	 * Returns the value of the '<em><b>Examination</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Examination</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Examination</em>' reference.
+	 * @return the value of the '<em>Examination</em>' containment reference.
 	 * @see #setExamination(Examination)
 	 * @see tdt4250case.Tdt4250casePackage#getCourseInstance_Examination()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Examination getExamination();
 
 	/**
-	 * Sets the value of the '{@link tdt4250case.CourseInstance#getExamination <em>Examination</em>}' reference.
+	 * Sets the value of the '{@link tdt4250case.CourseInstance#getExamination <em>Examination</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Examination</em>' reference.
+	 * @param value the new value of the '<em>Examination</em>' containment reference.
 	 * @see #getExamination()
 	 * @generated
 	 */
 	void setExamination(Examination value);
 
 	/**
-	 * Returns the value of the '<em><b>Timetable</b></em>' reference.
+	 * Returns the value of the '<em><b>Timetable</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Timetable</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Timetable</em>' reference.
+	 * @return the value of the '<em>Timetable</em>' containment reference.
 	 * @see #setTimetable(Timetable)
 	 * @see tdt4250case.Tdt4250casePackage#getCourseInstance_Timetable()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Timetable getTimetable();
 
 	/**
-	 * Sets the value of the '{@link tdt4250case.CourseInstance#getTimetable <em>Timetable</em>}' reference.
+	 * Sets the value of the '{@link tdt4250case.CourseInstance#getTimetable <em>Timetable</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Timetable</em>' reference.
+	 * @param value the new value of the '<em>Timetable</em>' containment reference.
 	 * @see #getTimetable()
 	 * @generated
 	 */
@@ -146,7 +146,7 @@ public interface CourseInstance extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role</em>' containment reference list.
 	 * @see tdt4250case.Tdt4250casePackage#getCourseInstance_Role()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<CourseRole> getRole();
@@ -162,7 +162,7 @@ public interface CourseInstance extends EObject {
 	 * @return the value of the '<em>Course Coordinator</em>' reference.
 	 * @see #setCourseCoordinator(Person)
 	 * @see tdt4250case.Tdt4250casePackage#getCourseInstance_CourseCoordinator()
-	 * @model derived="true"
+	 * @model required="true" transient="true" volatile="true" derived="true"
 	 * @generated
 	 */
 	Person getCourseCoordinator();

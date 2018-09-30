@@ -39,7 +39,7 @@ public interface ScheduledActivity extends EObject {
 	 * @return the value of the '<em>Timeslot</em>' attribute.
 	 * @see #setTimeslot(Timeslot)
 	 * @see tdt4250case.Tdt4250casePackage#getScheduledActivity_Timeslot()
-	 * @model dataType="tdt4250case.Timeslot"
+	 * @model dataType="tdt4250case.Timeslot" required="true"
 	 * @generated
 	 */
 	Timeslot getTimeslot();
@@ -65,7 +65,7 @@ public interface ScheduledActivity extends EObject {
 	 * @return the value of the '<em>Activity</em>' attribute.
 	 * @see #setActivity(String)
 	 * @see tdt4250case.Tdt4250casePackage#getScheduledActivity_Activity()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getActivity();
@@ -91,7 +91,7 @@ public interface ScheduledActivity extends EObject {
 	 * @return the value of the '<em>Room</em>' attribute.
 	 * @see #setRoom(String)
 	 * @see tdt4250case.Tdt4250casePackage#getScheduledActivity_Room()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getRoom();

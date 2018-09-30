@@ -20,12 +20,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//Course/credits"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/requiredCourse"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/recommendedCourse"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/creditReduction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/creditReductionCourse"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//Course/courseWork"/>
     </genClasses>
-    <genClasses ecoreClass="tdt4250case.ecore#//CourseCreditReduction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CourseCreditReduction/reduction"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//CourseCreditReduction/course"/>
+    <genClasses ecoreClass="tdt4250case.ecore#//CreditReductionCourse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CreditReductionCourse/reduction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//CreditReductionCourse/course"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CreditReductionCourse/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CreditReductionCourse/to"/>
     </genClasses>
     <genClasses ecoreClass="tdt4250case.ecore#//Studyprogram">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//Studyprogram/code"/>
@@ -69,6 +72,10 @@
     <genClasses ecoreClass="tdt4250case.ecore#//CourseRole">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CourseRole/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tdt4250case.ecore#//CourseRole/person"/>
+    </genClasses>
+    <genClasses ecoreClass="tdt4250case.ecore#//CourseWork">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CourseWork/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdt4250case.ecore#//CourseWork/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -36,7 +36,7 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Username</em>' attribute.
 	 * @see #setUsername(String)
 	 * @see tdt4250case.Tdt4250casePackage#getPerson_Username()
-	 * @model
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getUsername();
@@ -62,7 +62,7 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see tdt4250case.Tdt4250casePackage#getPerson_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

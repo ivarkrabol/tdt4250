@@ -26,4 +26,18 @@ public class ExaminationActivityWeight {
 		return format.format(weight);
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Float.floatToIntBits(weight);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return obj == this
+				|| (obj instanceof ExaminationActivityWeight
+						&& ((ExaminationActivityWeight)obj).weight == weight);
+	}
 }

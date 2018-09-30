@@ -157,7 +157,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 */
 	public EList<CourseRole> getRole() {
 		if (role == null) {
-			role = new EObjectWithInverseResolvingEList<CourseRole>(CourseRole.class, this,
+			role = new EObjectWithInverseResolvingEList.ManyInverse<CourseRole>(CourseRole.class, this,
 					Tdt4250casePackage.PERSON__ROLE, Tdt4250casePackage.COURSE_ROLE__PERSON);
 		}
 		return role;

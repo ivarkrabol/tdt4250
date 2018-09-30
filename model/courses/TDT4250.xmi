@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tdt4250case:Course xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tdt4250case="platform:/plugin/tdt4250case/model/tdt4250case.ecore" xsi:schemaLocation="platform:/plugin/tdt4250case/model/tdt4250case.ecore ../tdt4250case.ecore" code="tdt4250" name="Advanced Software Design" content="Generic techniques for modeling, design and implementation of modular software, focussing on industrial techniques and domains. Component-based design, component-based architectures and frameworks, distributed component-based systems. Model-driven development of software, code generation and domain-specific languages. Testing, continuous integration, deployment and governance.">
+  <studyprogram href="../studyprograms/Mtdt.xmi#mtdt"/>
+  <recommendedCourse href="TDT4100.xmi#tdt4100"/>
+  <recommendedCourse href="TDT4140.xmi#tdt4140"/>
+  <recommendedCourse href="TDT4175.xmi#tdt4175"/>
+  <recommendedCourse href="TDT4240.xmi#tdt4240"/>
+  <creditReductionCourse to="2008-08-31T00:00:00.000+0200">
+    <course href="SIF8060.xmi#sif8060"/>
+  </creditReductionCourse>
+  <instance semester="AUTUMN-2018">
+    <examination>
+      <activity evaluationForm="Work" weighting="30"/>
+      <activity evaluationForm="Written examination" weighting="70"/>
+    </examination>
+    <timetable>
+      <scheduledActivity activity="Lecture hours" room="GL-K5 K5" timeslot="Mon 10:15-11:00">
+        <reservedFor href="../studyprograms/Mtdt.xmi#mtdt"/>
+      </scheduledActivity>
+      <scheduledActivity activity="Lab hours" room="GLEG A34" timeslot="Tue 12:15-14:00">
+        <reservedFor href="../studyprograms/Mtdt.xmi#mtdt"/>
+      </scheduledActivity>
+      <scheduledActivity activity="Lecture hours" room="GL-GA F6" timeslot="Wed 10:15-12:00">
+        <reservedFor href="../studyprograms/Mtdt.xmi#mtdt"/>
+      </scheduledActivity>
+      <scheduledActivity activity="Lab hours" room="GL-EG U33" timeslot="Thu 14:15-16:00">
+        <reservedFor href="../studyprograms/Mtdt.xmi#mtdt"/>
+      </scheduledActivity>
+    </timetable>
+    <responsibleDepartment href="../departments/Idi.xmi#idi"/>
+    <role name="Course coordinator">
+      <person href="../departments/Idi.xmi#hal"/>
+    </role>
+  </instance>
+  <courseWork hours="3" type="Lecture hours"/>
+  <courseWork hours="2" type="Lab hours"/>
+</tdt4250case:Course>

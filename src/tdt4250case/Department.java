@@ -36,7 +36,7 @@ public interface Department extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see tdt4250case.Tdt4250casePackage#getDepartment_Code()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getCode();

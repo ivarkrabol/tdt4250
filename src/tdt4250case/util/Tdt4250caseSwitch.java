@@ -73,9 +73,9 @@ public class Tdt4250caseSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Tdt4250casePackage.COURSE_CREDIT_REDUCTION: {
-			CourseCreditReduction courseCreditReduction = (CourseCreditReduction) theEObject;
-			T result = caseCourseCreditReduction(courseCreditReduction);
+		case Tdt4250casePackage.CREDIT_REDUCTION_COURSE: {
+			CreditReductionCourse creditReductionCourse = (CreditReductionCourse) theEObject;
+			T result = caseCreditReductionCourse(creditReductionCourse);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -143,6 +143,13 @@ public class Tdt4250caseSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Tdt4250casePackage.COURSE_WORK: {
+			CourseWork courseWork = (CourseWork) theEObject;
+			T result = caseCourseWork(courseWork);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -164,17 +171,17 @@ public class Tdt4250caseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Course Credit Reduction</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Credit Reduction Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Course Credit Reduction</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Credit Reduction Course</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCourseCreditReduction(CourseCreditReduction object) {
+	public T caseCreditReductionCourse(CreditReductionCourse object) {
 		return null;
 	}
 
@@ -310,6 +317,21 @@ public class Tdt4250caseSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCourseRole(CourseRole object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Course Work</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Course Work</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCourseWork(CourseWork object) {
 		return null;
 	}
 

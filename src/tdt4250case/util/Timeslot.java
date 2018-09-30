@@ -66,4 +66,23 @@ public class Timeslot {
 				&& other.getEndTime().isAfter(startTime);
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dayOfWeek == null) ? 0 : dayOfWeek.hashCode());
+		result = prime * result + ((duration == null) ? 0 : duration.hashCode());
+		result = prime * result + ((startTime == null) ? 0 : startTime.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return obj == this
+				|| (obj instanceof Timeslot
+						&& ((Timeslot)obj).dayOfWeek.equals(dayOfWeek)
+						&& ((Timeslot)obj).startTime.equals(startTime)
+						&& ((Timeslot)obj).duration.equals(duration));
+	}
+
 }

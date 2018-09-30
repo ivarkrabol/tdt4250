@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tdt4250case:Studyprogram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tdt4250case="platform:/plugin/tdt4250case/model/tdt4250case.ecore" xsi:schemaLocation="platform:/plugin/tdt4250case/model/tdt4250case.ecore ../tdt4250case.ecore" code="mtdt">
+  <course href="../courses/TDT4250.xmi#tdt4250"/>
+  <course href="../courses/TDT4100.xmi#tdt4100"/>
+</tdt4250case:Studyprogram>

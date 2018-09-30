@@ -72,8 +72,8 @@ public class Tdt4250caseAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCourseCreditReduction(CourseCreditReduction object) {
-			return createCourseCreditReductionAdapter();
+		public Adapter caseCreditReductionCourse(CreditReductionCourse object) {
+			return createCreditReductionCourseAdapter();
 		}
 
 		@Override
@@ -122,6 +122,11 @@ public class Tdt4250caseAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseCourseWork(CourseWork object) {
+			return createCourseWorkAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -155,16 +160,16 @@ public class Tdt4250caseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tdt4250case.CourseCreditReduction <em>Course Credit Reduction</em>}'.
+	 * Creates a new adapter for an object of class '{@link tdt4250case.CreditReductionCourse <em>Credit Reduction Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tdt4250case.CourseCreditReduction
+	 * @see tdt4250case.CreditReductionCourse
 	 * @generated
 	 */
-	public Adapter createCourseCreditReductionAdapter() {
+	public Adapter createCreditReductionCourseAdapter() {
 		return null;
 	}
 
@@ -291,6 +296,20 @@ public class Tdt4250caseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCourseRoleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tdt4250case.CourseWork <em>Course Work</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tdt4250case.CourseWork
+	 * @generated
+	 */
+	public Adapter createCourseWorkAdapter() {
 		return null;
 	}
 

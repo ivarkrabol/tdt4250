@@ -22,8 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tdt4250case.Course#getCredits <em>Credits</em>}</li>
  *   <li>{@link tdt4250case.Course#getRequiredCourse <em>Required Course</em>}</li>
  *   <li>{@link tdt4250case.Course#getRecommendedCourse <em>Recommended Course</em>}</li>
- *   <li>{@link tdt4250case.Course#getCreditReduction <em>Credit Reduction</em>}</li>
+ *   <li>{@link tdt4250case.Course#getCreditReductionCourse <em>Credit Reduction Course</em>}</li>
  *   <li>{@link tdt4250case.Course#getInstance <em>Instance</em>}</li>
+ *   <li>{@link tdt4250case.Course#getCourseWork <em>Course Work</em>}</li>
  * </ul>
  *
  * @see tdt4250case.Tdt4250casePackage#getCourse()
@@ -60,7 +61,7 @@ public interface Course extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see tdt4250case.Tdt4250casePackage#getCourse_Code()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getCode();
@@ -187,20 +188,20 @@ public interface Course extends EObject {
 	EList<Course> getRecommendedCourse();
 
 	/**
-	 * Returns the value of the '<em><b>Credit Reduction</b></em>' containment reference list.
-	 * The list contents are of type {@link tdt4250case.CourseCreditReduction}.
+	 * Returns the value of the '<em><b>Credit Reduction Course</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250case.CreditReductionCourse}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Credit Reduction</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Credit Reduction Course</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credit Reduction</em>' containment reference list.
-	 * @see tdt4250case.Tdt4250casePackage#getCourse_CreditReduction()
+	 * @return the value of the '<em>Credit Reduction Course</em>' containment reference list.
+	 * @see tdt4250case.Tdt4250casePackage#getCourse_CreditReductionCourse()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CourseCreditReduction> getCreditReduction();
+	EList<CreditReductionCourse> getCreditReductionCourse();
 
 	/**
 	 * Returns the value of the '<em><b>Instance</b></em>' containment reference list.
@@ -219,5 +220,21 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	EList<CourseInstance> getInstance();
+
+	/**
+	 * Returns the value of the '<em><b>Course Work</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250case.CourseWork}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Course Work</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Work</em>' containment reference list.
+	 * @see tdt4250case.Tdt4250casePackage#getCourse_CourseWork()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<CourseWork> getCourseWork();
 
 } // Course
